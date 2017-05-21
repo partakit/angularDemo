@@ -21,7 +21,7 @@ require('./configs/routes')(app);
 app.get('/', function (req, res) {
     res.sendfile('views/index.html', { root: __dirname })
 });
-//process.env.PORT
+
 app.listen(3000, function () {
     console.log('listening on port 3000');
 });
