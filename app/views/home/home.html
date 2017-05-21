@@ -1,0 +1,54 @@
+<div ng-controller="home" ng-init="init()">
+
+
+    <!--<div treecontrol="" class="tree-classic" tree-model="treedata" on-selection="showSelected(node)" options="treeOptions">
+        label: {{node.name}} ({{node._id}})
+    </div>-->
+    <div class="row  margin-bottom-20" style="margin:20px 0px;">
+        <div class="col-md-6 col-md-offset-1">
+            <button ng-show="inside.length>0" class="btn btn-default" ng-click="getBack()">
+                <i class="fa fa-arrow-circle-left"></i> Back
+            </button>
+            <button class="btn btn-default" ng-click="getFolders()">
+                <i class="fa fa-home"></i> root
+            </button>
+            <button ng-show="inside.length<=0" class="btn btn-default" ng-click="showAddFolder = true">
+                <i class="fa fa-plus"></i> Folder
+            </button>
+            <button ng-show="inside.length>0" class="btn btn-default" ng-click="showAddImage=true;">
+                <i class="fa fa-plus"></i> Image
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="list-group">
+                <li type="button" ng-repeat="item in treedata | orderBy : 'name'" class="list-group-item">
+                    <i ng-show="item.type=='folder'" class="fa fa-folder-o"></i>
+                    <i ng-show="item.type=='image'" class="fa fa-picture-o"></i>
+                    <img ng-show="item.type=='image'" src="{{item.name}}" />
+                    <a href="#" ng-click="getSubItems(item)" ng-show="item.type=='folder'">{{item.name}}</a>
+                    <a ng-show="item.type=='image'" href="#" ng-click="showSelect(item)">Move</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-md-4" ng-show="showAddFolder">
+            <form class="form-inline">
+                <label class="sr-only" for="inlineFormInput">Folder Name</label>
+                <input type="text" ng-model="foldername" placeholder="Folder Name" class="form-control mb-2 mr-sm-2 mb-sm-0">
+                <button ng-click="addFolder()" ng-disabled="!foldername || foldername==''" class="btn btn-primary">Add New Folder</button>
+            </form>
+        </div>
+        <div class="col-md-4" ng-show="showAddImage">
+            <form class="form-inline">
+                <label class="sr-only" for="inlineFormInput">Image Url</label>
+                <input type="url" ng-model="imageUrl" placeholder="Image Url" class="form-control mb-2 mr-sm-2 mb-sm-0">
+                <button ng-click="addImage()" ng-disabled="!imageUrl || imageUrl==''" class="btn btn-primary">Add New Folder</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <select-target-folder display="showSelectTarget" on-select="moveImage(traget)"></select-target-folder>
+        </div>
+
+    </div>
+</div>

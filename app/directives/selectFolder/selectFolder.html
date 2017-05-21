@@ -1,0 +1,24 @@
+<div ng-show="display">
+    <h2>Select Target Folder</h2>
+    <div class="row  margin-bottom-20" style="margin:20px 0px;">
+        <div class="col-md-12">
+            <button ng-show="insidee.length>0" class="btn btn-default" ng-click="getBack()">
+                <i class="fa fa-arrow-circle-left"></i> Back
+            </button>
+            <button class="btn btn-default" ng-click="getFolders()">
+                <i class="fa fa-home"></i> root
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="list-group">
+                <li type="button" ng-repeat="item in treedataa | orderBy : 'name'" ng-show="item.type=='folder'" class="list-group-item">
+                    <i ng-show="item.type=='folder'" class="fa fa-folder-o"></i>
+                    <a href="#" ng-click="getSubItems(item)" ng-show="item.type=='folder'">{{item.name}}</a>
+                    <a href="#" ng-click="onSelect({traget:item._id})"><i class="fa fa-check"></i> select </a>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>

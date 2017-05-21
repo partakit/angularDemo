@@ -1,0 +1,28 @@
+{
+    "folders": [
+        {
+            "name": "folder 1",
+            "type": "folder",
+            "_id": "folder1",
+            "parent": null
+        },
+        {
+            "name": "folder 1-1",
+            "type": "folder",
+            "_id": "folder1-1",
+            "parent": "folder1"
+        },
+        {
+            "name": "_folder",
+            "_id": "_folder",
+            "type": "folder",
+            "parent": null
+        },
+        {
+            "name": "http://postpin.ir/Content/images/logo%20(2).jpg",
+            "_id": "http://postpin.ir/Content/images/logo%20(2).jpg",
+            "type": "image",
+            "parent": "folder1"
+        }
+    ]
+}

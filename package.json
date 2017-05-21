@@ -1,0 +1,19 @@
+{
+  "name": "angular-app",
+  "version": "1.0.0",
+  "description": "run server:\r node server.js\r view page: \r http://localhost:3000/",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^2.4.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "partakit.com",
+  "license": "ISC"
+}
