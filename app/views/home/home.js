@@ -83,7 +83,6 @@
                 }
 
                 $scope.moveImage = function (target) {
-                    alert($scope.selectedImage);
                     ApiService.Call("POST", "folder/" + target + "/move",
                         { imageUrl: $scope.selectedImage }, function (response) {
                             $scope.foldername = null;
